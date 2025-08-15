@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Voice Agent</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Conversational AI Section Only -->
+      <div class="section">
+        <h1>AI Voice Agent</h1>
+        <div class="conversation-controls">
+          <button id="recordButton">
+            <svg class="mic-icon" width="30" height="30" viewBox="0 0 24 24">
+              <!-- Mic icon paths -->
+              <path
+                d="M12 15C13.6569 15 15 13.6569 15 12V6C15 4.34315 13.6569 3 12 3C10.3431 3 9 4.34315 9 6V12C9 13.6569 10.3431 15 12 15Z"
+              />
+              <path
+                d="M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12"
+              />
+              <path d="M12 19V21" />
+            </svg>
+          </button>
+
+          <div id="recording-status" class="status-message">Ready to talk</div>
+        </div>
+
+        <div class="conversation-container">
+          <div id="conversation-history" class="conversation-history">
+            <div class="message agent-message">
+              Hello! How can I help you today?
+            </div>
+          </div>
+          <audio id="ai-response" autoplay hidden></audio>
+        </div>
+
+        <div class="transcription-container">
+          <label>Latest Transcription:</label>
+          <div id="transcription-result" class="transcription-box"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
